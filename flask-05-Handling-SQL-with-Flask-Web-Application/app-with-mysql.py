@@ -2,8 +2,8 @@
 from flask import Flask, render_template, request
 from flaskext.mysql import MySQL
 import boto3
-ssm = boto3.client('ssm', aws_access_key_id='Your_accesS_key', aws_secret_access_key='Your-Secret-access Key')
-#ssm = boto3.client('ssm')
+# ssm = boto3.client('ssm', aws_access_key_id='Your_accesS_key', aws_secret_access_key='Your-Secret-access Key')-Do not share your credentials
+ssm = boto3.client('ssm')
 
 response = ssm.get_parameter(
     Name= '/clarusway/dbname'
